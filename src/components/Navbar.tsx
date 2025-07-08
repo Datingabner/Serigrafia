@@ -53,8 +53,8 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className=" md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:block ">
+            <div className="ml-10 md:flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <NavLink
                   key={item.id}
