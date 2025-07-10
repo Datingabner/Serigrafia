@@ -1,18 +1,13 @@
 import React from 'react';
 import { Shirt, Palette, Star } from 'lucide-react';
-
+import ManchasPintura from './backgrounds/ManchasPintura';
 const Hero: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-cyan-50 to-purple-50 pt-20 pb-16 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-blue-600 rounded-full"></div>
-        <div className="absolute top-32 right-20 w-16 h-16 bg-cyan-500 rounded-full"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-purple-600 rounded-full"></div>
-        <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-blue-400 rounded-full"></div>
-      </div>
+        <ManchasPintura/>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">
