@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPhone } from 'react-icons/fa6';
 
