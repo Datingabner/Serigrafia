@@ -1,6 +1,7 @@
 import React from 'react';
 import logoSerigrafia from './../../public/Logo-Serigrafia.ico';
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { FaWhatsapp, FaFacebook} from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -10,9 +11,9 @@ const Footer: React.FC = () => {
           {/* Logo y descripción */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <img 
+              <img
                 src={logoSerigrafia}
-                alt="Logo Serigrafía" 
+                alt="Logo Serigrafía"
                 className="h-10 w-auto"
               />
               <span className="ml-3 text-xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -20,19 +21,22 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Especialistas en estampado textil con más de 10 años de experiencia. 
+              Especialistas en estampado textil con más de 10 años de experiencia.
               Ofrecemos calidad premium y servicio personalizado para cada proyecto.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200">
-                <Facebook className="h-5 w-5" />
+            <div className="flex space-x-2">
+              <a href="https://www.facebook.com/Seriestampa2" className="w-15 h-15 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer">
+                <FaFacebook className="h-10 w-10" />
               </a>
-              <a href="#" className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors duration-200">
-                <Instagram className="h-5 w-5" />
+              <a href="https://wa.me/+5215548583702" className="w-15 h-15 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-300 transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp className="h-10 w-10" />
               </a>
-              <a href="#" className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-200">
-                <Twitter className="h-5 w-5" />
-              </a>
+              
             </div>
           </div>
 
@@ -56,15 +60,15 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-cyan-400" />
-                <span>+52 (555) 123-4567</span>
+                <span>+52 1 55 4858 37 02</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-cyan-400" />
-                <span>info@serigrafia.com</span>
+                <span>(Email pendiente)</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 text-cyan-400 mt-0.5" />
-                <span>Av. Principal 123<br />Ciudad, CP 12345</span>
+                <span>(Información pendiente.)<br />CDMX, CP ?</span>
               </div>
             </div>
           </div>
@@ -72,7 +76,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Serigrafía Textil. Todos los derechos reservados.
+            © 2025 Serigrafía Textil. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">

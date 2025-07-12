@@ -48,7 +48,7 @@ const Tecnicas: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="mt-10 py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -65,7 +65,7 @@ const Tecnicas: React.FC = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6"
+                className=" not-md-card not-md:bg-white card-md rounded-xl shadow-lg  p-6"
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${tecnica.color} rounded-full flex items-center justify-center mb-4`}>
                   <IconComponent className="h-8 w-8 text-white" />

@@ -7,9 +7,6 @@ import { gsap } from "gsap";
     
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
-
-
 interface NavItem {
   id: string;
   path: To;
@@ -26,79 +23,126 @@ const Navbar: React.FC = () => {
     { id: 'como-trabajamos', path: '/como-trabajamos', label: 'Cómo Trabajamos' },
     { id: 'contacto', path: '/contacto', label: 'Contacto' }
   ];
-  gsap.registerPlugin(ScrollTrigger);
-  const navbarRef= useRef<HTMLDivElement>(null);
-  const logoRef= useRef<HTMLImageElement>(null);
-  const navbarDesktopRef=useRef<HTMLDivElement>(null);
-  const navItemsRef=useRef<(HTMLElement|null)[]>([]);
-  const navbuttonRef=useRef<HTMLDivElement>(null);
-  const navmobilemenuRef=useRef<HTMLDivElement>(null);
-  useEffect(()=>{
-    const navbar=navbarRef.current;
-    const logo=logoRef.current;
-    const navbarDesktop=navbarDesktopRef.current;
-    const itemsnav=navItemsRef.current;
-    const navbutton=navbuttonRef.current;
-    const mobilemenu=navmobilemenuRef.current;
 
-    if(!navbar||!logo||!navbarDesktop)return;
-    const tl =gsap.timeline({paused:true});
-    tl.to(navbar,{height:50,top:0, padding:'0', duration:0.5})
-    .to(logo,{
-      paused:true,
+gsap.registerPlugin(ScrollTrigger);
+
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLImageElement>(null);
+  const navbarDesktopRef = useRef<HTMLDivElement>(null);
+  const navItemsRef = useRef<(HTMLElement | null)[]>([]);
+  const navbuttonRef = useRef<HTMLDivElement>(null);
+  const navmobilemenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const navbar = navbarRef.current;
+    const logo = logoRef.current;
+    const navbarDesktop = navbarDesktopRef.current;
+    const itemsnav = navItemsRef.current.filter(Boolean) as HTMLElement[];
+    const navbutton = navbuttonRef.current;
+    const mobilemenu = navmobilemenuRef.current;
+
+    if (!navbar || !logo || !navbarDesktop) return;
+
+    // Animación principal de la navbar (encogimiento)
+    gsap.to(navbar, {
+      height: 50,
+      top: 0,
+      padding: '0',
+      duration: 8,
       scrollTrigger: {
-        trigger: "img",
-        start: "top top",
-        end: "+=50",
-        scrub: true,
-        onEnter: () => gsap.to(logo, { scale: 0.9,top:0,paddingBottom:'20px',paddingTop:'0px',  duration: 0.5 }),
-        onLeaveBack: () => gsap.to(logo, { scale: 1.1,paddingBottom:'0px',paddingTop:'0px', duration: 0.5 })
-      }})
-    .to(navbarDesktop,{height:50,top:'0',duration:0.5},0)
-    .to(itemsnav, {
-      paused: true,
-      scrollTrigger: {
-        trigger: "nav",
-        start: "top top",
-        end: "+=50",
-        scrub: true,
-        onEnter: () => gsap.to(itemsnav, { scale: 0.9,paddingBottom:'4px',paddingTop:'5px', duration: 0.5 }),
-        onLeaveBack: () => gsap.to(itemsnav, { scale: 1.1,paddingBottom:'12px',paddingTop:'12px',  duration: 0.5 })
+        trigger: document.body,
+        start: 'top top',
+        end: '+=50',
+        scrub: 1,
+        // toggleActions: 'play none none resume'
       }
-    })
-    .to(navbutton,{paused:true,
-      scrollTrigger:{
-        trigger:"button",
-        start:"top top",
-        end:"+=50",
-        scrub:true,
-        onEnter: () => gsap.to(navbutton, { scale: 0.9,top:0,paddingBottom:'20px',paddingTop:'0px',  duration: 0.5 }),
-        onLeaveBack: () => gsap.to(navbutton, { scale: 1.1,paddingBottom:'0px',paddingTop:'0px', duration: 0.5 })
-      }})
-      .to(mobilemenu,{paused:true,
-        scrollTrigger:{
-          trigger:".menu_mobile",
-          start:"top top",
-          end:"+=50",
-          scrub:true,
-          onEnter: () => gsap.to(mobilemenu, {y:-22,  duration: 0.5 }),
-        onLeaveBack: () => gsap.to(mobilemenu, {y:+22, duration: 0.5 })
+    });
+
+    // Animación del logo
+    gsap.to(logo, {
+      scale: 0.9,
+      top: 0,
+      paddingBottom: '20px',
+      paddingTop: '0px',
+      duration: 8,
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: '+=50',
+        scrub: 1,
+        // toggleActions: 'play none none resume'
+      }
+    });
+
+    // Animación de la navbar desktop
+    gsap.to(navbarDesktop, {
+      height: 50,
+      top: '0',
+      duration: 1,
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: '+=50',
+        scrub: 1,
+        // toggleActions: 'play none none resume'
+      }
+    });
+
+    // Animación de los items de navegación
+    itemsnav.forEach(item => {
+      gsap.to(item, {
+        scale: 0.9,
+        paddingBottom: '4px',
+        paddingTop: '5px',
+        duration: 1,
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: '+=50',
+          scrub: 1,
+          // toggleActions: 'play none none resume'
         }
       });
-    const handleScroll = () => {
-      if (window.scrollY > 60) {
-        tl.play();
-        // tl.restart(true);
-      } else {
-        tl.pause();
-        tl.revert(navbar);
-      }
-    };
+    });
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
+    // Animación del botón
+    if (navbutton) {
+      gsap.to(navbutton, {
+        scale: 0.9,
+        top: 0,
+        paddingBottom: '20px',
+        paddingTop: '0px',
+        duration: 1,
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: '+=50',
+          scrub: 1,
+          // toggleActions: 'play none none resume'
+        }
+      });
+    }
+
+    // Animación del menú móvil
+    if (mobilemenu) {
+      gsap.to(mobilemenu, {
+        y: -22,
+        duration: 1,
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: '+=10',
+          scrub: 1
+          //toggleActions: 'play none none reverse'
+        }
+      });
+    }
+
+    // Limpieza
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);  
 
   // Función para manejar el estilo activo en desktop
   const getNavLinkClass = ({ isActive }: { isActive: boolean }): string => {
@@ -188,6 +232,7 @@ const Navbar: React.FC = () => {
       
     </nav>
   );
+
 };
 
 export default Navbar;

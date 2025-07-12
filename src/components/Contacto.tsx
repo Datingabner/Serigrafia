@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+import { FaPhone } from 'react-icons/fa6';
 
 const Contacto: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -29,19 +31,19 @@ const Contacto: React.FC = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      info: '+52 (555) 123-4567',
+      info: '+52 1 55 4858 37 02',
       color: 'from-blue-600 to-blue-700'
     },
     {
       icon: Mail,
       title: 'Email',
-      info: 'info@serigrafia.com',
+      info: '(Pendiente)',
       color: 'from-cyan-500 to-cyan-600'
     },
     {
       icon: MapPin,
       title: 'Dirección',
-      info: 'Av. Principal 123, Ciudad, CP 12345',
+      info: '(Informacion pendiente), CDMX, CP ?',
       color: 'from-purple-600 to-purple-700'
     },
     {
@@ -139,7 +141,7 @@ const Contacto: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-2">
-                    Teléfono
+                    Teléfono:
                   </label>
                   <input
                     type="tel"
@@ -154,7 +156,7 @@ const Contacto: React.FC = () => {
                 
                 <div>
                   <label htmlFor="servicio" className="block text-sm font-medium text-gray-700 mb-2">
-                    Servicio de Interés
+                    Servicio de Interés:
                   </label>
                   <select
                     id="servicio"
@@ -196,7 +198,7 @@ const Contacto: React.FC = () => {
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-200 shadow-lg flex items-center justify-center"
               >
-                <Send className="h-5 w-5 mr-2" />
+                <FaWhatsapp className="h-8 w-8 mr-2" />
                 Enviar Mensaje
               </button>
             </form>
@@ -210,10 +212,12 @@ const Contacto: React.FC = () => {
             Llámanos directamente o envíanos un WhatsApp para recibir atención inmediata
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+            <button className="bg-white flex items-center text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+              <FaPhone className="h-8 w-8 mr-2" />
               Llamar Ahora
             </button>
-            <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200">
+            <button className="bg-green-500 flex items-center text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200">
+              <FaWhatsapp className="h-8 w-8 mr-2" />
               WhatsApp
             </button>
           </div>

@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Background Pattern */}
         <ManchasPintura/>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
+      <div className="mt-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-1">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">
@@ -35,15 +35,15 @@ const Hero: React.FC = () => {
 
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shirt className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Todas las Prendas</h3>
+              <h3 className=" text-xl font-semibold text-gray-900 mb-2">Todas las Prendas</h3>
               <p className="text-gray-600">Estampamos en cualquier tipo de prenda: camisetas, hoodies, uniformes y más</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
               <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Palette className="h-8 w-8 text-white" />
               </div>
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
               <p className="text-gray-600">Plastisol, base agua, foil, flock, HD, glitter y corte de vinil</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className=" bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="h-8 w-8 text-white" />
               </div>
@@ -60,6 +60,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
+        {/*  */}
       </div>
     </section>
   );
