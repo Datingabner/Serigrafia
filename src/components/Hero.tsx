@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shirt, Palette, Star } from 'lucide-react';
 import ManchasPintura from './backgrounds/ManchasPintura';
+import { NavLink } from 'react-router-dom';
 const Hero: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-cyan-50 to-purple-50 pt-20 pb-16 overflow-hidden">
@@ -20,14 +21,15 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Estampado de alta calidad en prendas de vestir para dama, caballero y niños. 
-            Cualquier moda, estilo o diseño con las mejores técnicas del mercado.
+            Estampado de alta calidad en prendas de vestir para dama, caballero y niños.
+            Cualquier moda, estilo, diseño o dibujo con las mejores técnicas del mercado.
+            Y para cualquier tipo de publicidad como gorras, bolsas, tazas, etc.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
+            <NavLink to={"/tecnicas"} className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
               Ver Nuestras Técnicas
-            </button>
+            </NavLink>
             <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-200">
               Solicitar Cotización
             </button>
@@ -40,7 +42,7 @@ const Hero: React.FC = () => {
                 <Shirt className="h-8 w-8 text-white" />
               </div>
               <h3 className=" text-xl font-semibold text-gray-900 mb-2">Todas las Prendas</h3>
-              <p className="text-gray-600">Estampamos en cualquier tipo de prenda: camisetas, hoodies, uniformes y más</p>
+              <p className="text-gray-600">Estampamos en cualquier tipo de prenda: camisetas, uniformes, gorras y más</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">

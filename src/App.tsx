@@ -7,6 +7,8 @@ import Muestras from './components/Muestras';
 import ComoTrabajamos from './components/ComoTrabajamos';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
+import NotFound from './components/NotFound';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
             <Route path="/trabajos-realizados" element={<Muestras />} />
             <Route path="/como-trabajamos" element={<ComoTrabajamos />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </main>
         <Footer />

@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   
   const navItems: NavItem[] = [
     { id: 'inicio', path: '/', label: 'Inicio'},
-    { id: 'tecnicas', path: '/tecnicas', label: 'Técnicas' },
+    { id: 'tecnicas', path: '/tecnicas', label: 'Técnicas y Prendas' },
     { id: 'trabajos-realizados', path: '/trabajos-realizados', label: 'Trabajos realizados' },
     { id: 'como-trabajamos', path: '/como-trabajamos', label: 'Cómo Trabajamos' },
     { id: 'contacto', path: '/contacto', label: 'Contacto' }
@@ -182,7 +182,7 @@ gsap.registerPlugin(ScrollTrigger);
               Inicio
             </NavLink>
             <NavLink to="/tecnicas" ref={el => {navItemsRef.current[1] = el}}   className={getNavLinkClass}  onClick={() => setIsMenuOpen(false)}>
-              Técnicas
+              Técnicas y Prendas
               </NavLink>
             <NavLink to="/trabajos-realizados" ref={el => {navItemsRef.current[2] = el}}   className={getNavLinkClass}  onClick={() => setIsMenuOpen(false)}>
             Trabajos realizados

@@ -2,6 +2,7 @@ import React from 'react';
 import logoSerigrafia from './../../public/Logo-Serigrafia.ico';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaWhatsapp, FaFacebook} from "react-icons/fa";
+import { FaInstagram, FaTiktok } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
   return (
@@ -24,8 +25,11 @@ const Footer: React.FC = () => {
               Especialistas en estampado textil con más de 10 años de experiencia.
               Ofrecemos calidad premium y servicio personalizado para cada proyecto.
             </p>
-            <div className="flex space-x-2">
-              <a href="https://www.facebook.com/Seriestampa2" className="w-15 h-15 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+              <div className='flex space-x-1'>
+                <h3 className="text-lg font-semibold mb-4">Redes Sociales</h3>
+              </div>
+            <div className="flex space-x-4">
+              <a href="https://www.facebook.com/Seriestampa2" className="w-15 h-15 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer">
                 <FaFacebook className="h-10 w-10" />
@@ -36,7 +40,12 @@ const Footer: React.FC = () => {
               >
                 <FaWhatsapp className="h-10 w-10" />
               </a>
-              
+              <a href="https://www.instagram.com/serigrafiatextilmx" target="_blank" rel="noopener noreferrer" className="w-15 h-15 bg-gradient-to-bl from-orange-600 to-purple-700 rounded-full flex items-center justify-center hover:bg-gradient-to-bl hover:from-orange-300 hover:to-purple-400 transition-colors duration-200 ">
+                <FaInstagram className="h-10 w-10" />
+              </a>
+              <a href="https://www.tiktok.com/@serigrafia.textil.mx" target="_blank" rel="noopener noreferrer" className="w-15 h-15 bg-black rounded-full flex items-center justify-center hover:bg-neutral-700 transition-colors duration-200 ">
+                <FaTiktok className="h-10 w-10" />
+              </a>
             </div>
           </div>
 
@@ -59,16 +68,16 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-cyan-400" />
-                <span>+52 1 55 4858 37 02</span>
+                <Phone className="h-6 w-6 mr-2 text-cyan-400" />
+                <a href="tel:+5215548583702" className="hover:text-cyan-400 transition-colors duration-200">+52 1 55 4858 37 02</a>
               </div>
               <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-cyan-400" />
-                <span>(Email pendiente)</span>
+                <Mail className="h-6 w-6 mr-2 text-cyan-400" />
+                <a href="mailto:seriestampa2dany@outlook.com" className='hover:text-cyan-400 transition-colors duration-200'>seriestampa2dany@outlook.com</a>
               </div>
               <div className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 text-cyan-400 mt-0.5" />
-                <span>(Información pendiente.)<br />CDMX, CP ?</span>
+                <MapPin className="h-9 w-9 mr-2 text-cyan-400 mt-0.5" />
+                <a href="https://maps.app.goo.gl/ETr5hjp7coWpHhXw5" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-200">Calle Hidalgo 4 Villa Nicolás Romero, Mexico CP 54417 </a>
               </div>
             </div>
           </div>

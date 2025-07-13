@@ -31,25 +31,28 @@ const Contacto: React.FC = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      info: '+52 1 55 4858 37 02',
+      info: '+55 4858 3702',
+      link: 'tel:+525548583702',
       color: 'from-blue-600 to-blue-700'
     },
     {
       icon: Mail,
       title: 'Email',
-      info: '(Pendiente)',
+      info: 'seriestampa2dany@outlook.com',
+      link: 'mailto:seriestampa2dany@outlook.com',
       color: 'from-cyan-500 to-cyan-600'
     },
     {
       icon: MapPin,
       title: 'Dirección',
-      info: '(Informacion pendiente), CDMX, CP ?',
+      info: 'Calle Hidalgo 4 54417 Villa Nicolás Romero, Mexico',
+      link: 'https://maps.app.goo.gl/ETr5hjp7coWpHhXw5',
       color: 'from-purple-600 to-purple-700'
     },
     {
       icon: Clock,
-      title: 'Horarios',
-      info: 'Lun - Vie: 9:00 - 18:00\nSáb: 9:00 - 14:00',
+      title: 'Horario',
+      info: 'Lun - Sáb: 9:00 a.m. - 05:00 p.m. ',
       color: 'from-pink-500 to-pink-600'
     }
   ];
@@ -80,7 +83,7 @@ const Contacto: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
-                      <p className="text-gray-600 whitespace-pre-line">{item.info}</p>
+                      <a href={item.link} target={item.title==='Dirección'?'_blank':'_self'} className="text-gray-600 whitespace-pre-line">{item.info}</a>
                     </div>
                   </div>
                 );
@@ -102,7 +105,7 @@ const Contacto: React.FC = () => {
               <MessageSquare className="h-6 w-6 mr-2 text-blue-600" />
               Envíanos un Mensaje
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -120,7 +123,7 @@ const Contacto: React.FC = () => {
                     placeholder="Tu nombre completo"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
@@ -153,7 +156,7 @@ const Contacto: React.FC = () => {
                     placeholder="(555) 123-4567"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="servicio" className="block text-sm font-medium text-gray-700 mb-2">
                     Servicio de Interés:
@@ -212,14 +215,16 @@ const Contacto: React.FC = () => {
             Llámanos directamente o envíanos un WhatsApp para recibir atención inmediata
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white flex items-center text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+            <a href="tel:+5215548583702" className="bg-white flex items-center text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
               <FaPhone className="h-8 w-8 mr-2" />
               Llamar Ahora
-            </button>
-            <button className="bg-green-500 flex items-center text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200">
+            </a>
+            <a href="https://wa.me/+5215548583702" className="bg-green-500 flex items-center text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer">
               <FaWhatsapp className="h-8 w-8 mr-2" />
               WhatsApp
-            </button>
+            </a>
           </div>
         </div>
       </div>
