@@ -1,8 +1,9 @@
 import React from 'react';
-import logoSerigrafia from './../../public/Logo-Serigrafia.ico';
+import logoSerigrafia from './../assets/Logo-Serigrafia.ico';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaWhatsapp, FaFacebook} from "react-icons/fa";
 import { FaInstagram, FaTiktok } from 'react-icons/fa6';
+import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -53,13 +54,13 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Nuestros Servicios</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">Plastisol</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">Base Agua</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">Foil</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">Flock</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">HD</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">Glitter</a></li>
-              <li><a href="#" className="hover:text-cyan-400 transition-colors duration-200">Corte de Vinil</a></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">Plastisol</NavLink></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">Base Agua</NavLink></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">Foil</NavLink></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">Flock</NavLink></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">HD</NavLink></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">Glitter</NavLink></li>
+              <li><NavLink to="/tecnicas" className="hover:text-cyan-400 transition-colors duration-200">Corte de Vinil</NavLink></li>
             </ul>
           </div>
 

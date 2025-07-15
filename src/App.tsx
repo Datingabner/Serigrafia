@@ -8,11 +8,13 @@ import ComoTrabajamos from './components/ComoTrabajamos';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound';
+import ScrollToTop from "./components/Utils/ScrollToTop";
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <div className="min-h-screen bg-white">
         <Navbar />
         <main>

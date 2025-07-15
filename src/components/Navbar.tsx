@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { type To } from "react-router-dom";
-import logoSerigrafia from './../../public/Logo-Serigrafia.ico';
+import logoSerigrafia from './../assets/Logo-Serigrafia.ico';
 import { gsap } from "gsap";
     
 import { ScrollTrigger } from "gsap/ScrollTrigger";

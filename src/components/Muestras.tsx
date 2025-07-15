@@ -1,7 +1,29 @@
 import React from 'react';
 import {  Baby, Venus, Mars } from 'lucide-react';
+import ImageModal from './Utils/ImageModal';
+const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg",{ eager: true, as: "url" });
 
 const Muestras: React.FC = () => {
+ type ImagenAgrupada = {
+  categoria: string;
+  nombre: string;
+  url: string;
+};
+
+const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map(
+  ([path, url]) => {
+    const partes = path.split("/");
+    const categoria = partes[partes.length - 2]; // Ej: Playeras, Gorras
+    const nombreArchivo = partes[partes.length - 1].replace(".jpg", "");
+
+    return {
+      categoria,
+      nombre: nombreArchivo,
+      url: url as string,
+    };
+  }
+);
+
   const categorias = [
     {
       title: 'Dama',
@@ -127,10 +149,21 @@ const Muestras: React.FC = () => {
         {/* Galería placeholder */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Galería de Trabajos Realizados</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12].map((item) => (
-              <div key={item} className="hover:scale-110 aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center hover:from-blue-100 hover:to-cyan-100 transition-colors duration-300 cursor-pointer">
-                <span className="text-gray-500 font-medium">Muestra {item}</span>
+          <div className="columns-2 md:columns-4 gap-4 space-y-4">
+            {listaAgrupada.map((item) => (
+              <div key={item.nombre} className="inline-block w-full">
+              <ImageModal
+              key={item.nombre}
+                  imageUrl={item.url || ''}
+                  title={item.nombre}
+                  technique={'Descripción no disponible'}
+              >
+
+              <div key={item.nombre} className="p-2 border-2 border-gray-400 md:hover:border-t-purple-500 md:hover:border-s-blue-700 md:hover:border-b-sky-400 md:hover:border-r-pink-500 hover:p-0 hover:scale-110  aspect-square bg-gradient-to-br rounded-lg flex items-center justify-center hover:from-blue-100 hover:to-cyan-100 transition-colors hover:transition-all duration-300 cursor-pointer">
+                {/* <span className="text-gray-500 font-medium">Muestra {item.name}</span> */}
+                <img src={item.url} alt={item.categoria} className='w-full rounded-lg hover:opacity-90 transition-opacity duration-300' />
+              </div>
+              </ImageModal>
               </div>
             ))}
           </div>
@@ -138,6 +171,7 @@ const Muestras: React.FC = () => {
             ¿Quieres ver más ejemplos? Contáctanos para ver nuestro portafolio completo
           </p>
         </div>
+
       </div>
     </section>
   );

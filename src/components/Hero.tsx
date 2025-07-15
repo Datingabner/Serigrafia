@@ -37,21 +37,21 @@ const Hero: React.FC = () => {
 
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
+            <NavLink to={"/tecnicas#prendas"} className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shirt className="h-8 w-8 text-white" />
               </div>
               <h3 className=" text-xl font-semibold text-gray-900 mb-2">Todas las Prendas</h3>
               <p className="text-gray-600">Estampamos en cualquier tipo de prenda: camisetas, uniformes, gorras y más</p>
-            </div>
+            </NavLink>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
+            <NavLink to={"/tecnicas#tecnicas"} className="bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
               <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Palette className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Múltiples Técnicas</h3>
               <p className="text-gray-600">Plastisol, base agua, foil, flock, HD, glitter y corte de vinil</p>
-            </div>
+            </NavLink>
 
             <div className=" bg-white p-6 rounded-xl shadow-lg not-md-card card-md">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
