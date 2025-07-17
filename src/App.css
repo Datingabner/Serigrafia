@@ -5,7 +5,7 @@
 }
 @layer components {
   .card-md {
-    @apply md:border-2 md:border-gray-300 md:hover:border-2 md:hover:border-t-purple-500 md:hover:border-s-blue-700 md:hover:border-b-sky-400 md:hover:border-r-pink-500 md:hover:shadow-xl md:transition-all md:duration-300 md:transform md:hover:-translate-y-2;
+    @apply md:border-2 md:border-gray-300 md:hover:border-2 md:hover:border-t-purple-500 md:hover:border-s-blue-700 md:hover:border-b-sky-400 md:hover:border-r-pink-500 md:hover:shadow-xl md:transition-all md:duration-300 md:transform md:hover:-translate-y-2 backdrop-blur-xs;
   }
   .not-md-card{
     @apply border-2 not-md:border-t-purple-500 not-md:border-s-blue-700 not-md:border-b-sky-400 not-md:border-r-pink-500

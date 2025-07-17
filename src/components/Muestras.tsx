@@ -110,7 +110,7 @@ const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map
           {categorias.map((categoria, index) => {
             const IconComponent = categoria.icon;
             return (
-              <div key={index} className={categoria.color_card+"bg-gradient-to-br  rounded-xl p-6 hover:shadow-2xl hover:scale-110 transition-shadow hover:transition-all duration-300"}>
+              <div key={index} className={categoria.color_card+" bg-gradient-to-br  rounded-xl p-6 hover:shadow-2xl hover:scale-110 transition-shadow hover:transition-all duration-300"}>
                 <div className="flex items-center mb-4">
                   <div className={ categoria.color_circle+" w-12 h-12 bg-gradient-to-r rounded-full flex items-center justify-center mr-4"}>
                     <IconComponent className="h-8 w-8 text-white" />

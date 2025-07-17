@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import ImageModal from './Utils/ImageModal';
 import playera1 from '../assets/serigrafia-resource/Playeras/Playera1.jpg';
 import gorra1 from '../assets/serigrafia-resource/Gorras/Gorra1.jpg';
+import BubbleBackground from './backgrounds/Bubbles';
 
 const Tecnicas: React.FC = () => {
   const location = useLocation();
@@ -116,8 +117,14 @@ const Tecnicas: React.FC = () => {
   const phoneNumber = '15548583702'; // Reemplaza con tu número
   const message = encodeURIComponent('Hola, tengo una duda sobre que tecnica puedo usar para mi diseño.'); // Mensaje codificado
   return (
-    <section className="mt-10 py-20 bg-gray-50"  id='tecnicas' ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative z-0 inline-block pt-18 bg-gray-50 w-full h-full"   id='tecnicas' ref={sectionRef}>
+      <BubbleBackground 
+        bubbleCount={30}
+        color="rgba(200, 210, 255)"
+        minSize={15}
+        maxSize={50}
+      />
+      <div className="max-w-7xl pt-10 pb-20 z-0 bg-cyan-100/20 mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Nuestras <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Técnicas</span>
@@ -133,9 +140,9 @@ const Tecnicas: React.FC = () => {
             return (
               <div
                 key={index}
-                className=" not-md-card not-md:bg-white card-md rounded-xl shadow-lg  p-6"
+                className="z-0 not-md-card not-md:bg-white card-md rounded-xl shadow-lg  p-6"
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${tecnica.color} rounded-full flex items-center justify-center mb-4`}>
+                <div className={`z-0 w-16 h-16 bg-gradient-to-r ${tecnica.color} rounded-full flex items-center justify-center mb-4`}>
                   <IconComponent className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{tecnica.name}</h3>
