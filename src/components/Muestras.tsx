@@ -1,7 +1,7 @@
 import React from 'react';
 import {  Baby, Venus, Mars } from 'lucide-react';
 import ImageModal from './Utils/ImageModal';
-const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg",{ eager: true, as: "url" });
+const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg",{ eager: true, query: '?url', import: 'default' });
 
 const Muestras: React.FC = () => {
  type ImagenAgrupada = {

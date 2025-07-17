@@ -7,11 +7,29 @@ import { LuCalendarDays } from 'react-icons/lu';
 import { MdCampaign } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
 import ImageModal from './Utils/ImageModal';
-import playera1 from '../assets/serigrafia-resource/Playeras/Playera1.jpg';
-import gorra1 from '../assets/serigrafia-resource/Gorras/Gorra1.jpg';
+const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg",{ eager: true, query: '?url', import: 'default' });
 import BubbleBackground from './backgrounds/Bubbles';
 
 const Tecnicas: React.FC = () => {
+  type ImagenAgrupada = {
+  categoria: string;
+  nombre: string;
+  url: string;
+};
+  
+const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map(
+  ([path, url]) => {
+    const partes = path.split("/");
+    const categoria = partes[partes.length - 2]; // Ej: Playeras, Gorras
+    const nombreArchivo = partes[partes.length - 1].replace(".jpg", "");
+
+    return {
+      categoria,
+      nombre: nombreArchivo,
+      url: url as string,
+    };
+  }
+);
   const location = useLocation();
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -80,38 +98,43 @@ const Tecnicas: React.FC = () => {
       name: 'Camisetas',
       icon: FaTshirt,
       color: 'from-blue-600 to-blue-700',
-      example: playera1
+      example: listaAgrupada.find(img => img.categoria === 'Playeras')?.url || '',
     },
     {
       name: "Gorras",
       icon: GiBilledCap,
       color: 'from-cyan-500 to-cyan-600',
-      example: gorra1
+      example: listaAgrupada.find(img => img.categoria === 'Gorras')?.url || '',
     },
     {
       name: "Bolsas",
       icon: GiShoppingBag,
-      color: 'from-purple-600 to-purple-700'
+      color: 'from-purple-600 to-purple-700',
+      example: listaAgrupada.find(img => img.categoria === 'Bolsas')?.url || '',
     },
     {
       name: "Tazas",
       icon: BsCup,
-      color: 'from-pink-500 to-pink-600'
+      color: 'from-pink-500 to-pink-600',
+      example: listaAgrupada.find(img => img.categoria === 'Tazas')?.url || '',
     },
     {
       name: "Calendarios",
       icon: LuCalendarDays,
-      color: 'from-indigo-600 to-indigo-700'
+      color: 'from-indigo-600 to-indigo-700',
+      example: listaAgrupada.find(img => img.categoria === 'Calendarios')?.url || '',
     },
     {
       name: "Artículos publicitarios",
       icon: FaStore,
-      color: 'from-yellow-500 to-yellow-600'
+      color: 'from-yellow-500 to-yellow-600',
+      example: listaAgrupada.find(img => img.categoria === 'Articulos_publicitarios')?.url || '',
     },
     {
       name: "Articulos para campañas",
       icon: MdCampaign,
-      color: 'from-green-600 to-green-700'
+      color: 'from-green-600 to-green-700',
+      example: listaAgrupada.find(img => img.categoria === 'Articulos_para_campañas')?.url || '',
     }
   ];
   const phoneNumber = '15548583702'; // Reemplaza con tu número
