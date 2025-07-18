@@ -7,29 +7,73 @@ import { LuCalendarDays } from 'react-icons/lu';
 import { MdCampaign } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
 import ImageModal from './Utils/ImageModal';
-const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg",{ eager: true, query: '?url', import: 'default' });
+const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg", { eager: true, query: '?url', import: 'default' });
 import BubbleBackground from './backgrounds/Bubbles';
 
 const Tecnicas: React.FC = () => {
   type ImagenAgrupada = {
-  categoria: string;
-  nombre: string;
-  url: string;
-};
-  
-const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map(
-  ([path, url]) => {
-    const partes = path.split("/");
-    const categoria = partes[partes.length - 2]; // Ej: Playeras, Gorras
-    const nombreArchivo = partes[partes.length - 1].replace(".jpg", "");
+    categoria: string;
+    nombre: string;
+    url: string;
+  };
 
-    return {
-      categoria,
-      nombre: nombreArchivo,
-      url: url as string,
-    };
-  }
-);
+  const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map(
+    ([path, url]) => {
+      const partes = path.split("/");
+      const categoria = partes[partes.length - 2]; // Ej: Playeras, Gorras
+      const nombreArchivo = partes[partes.length - 1].replace(".jpg", "");
+      return {
+        categoria,
+        nombre: nombreArchivo,
+        url: url as string,
+      };
+    }
+  );
+
+  const prendas = [
+    {
+      name: 'Camisetas',
+      icon: FaTshirt,
+      color: 'from-blue-600 to-blue-700',
+      example: listaAgrupada.filter(item => item.categoria?item.categoria=='Playeras':item)
+    },
+    {
+      name: "Gorras",
+      icon: GiBilledCap,
+      color: 'from-cyan-500 to-cyan-600',
+      example: listaAgrupada.filter(item => item.categoria === 'Gorras')
+    },
+    {
+      name: "Bolsas",
+      icon: GiShoppingBag,
+      color: 'from-purple-600 to-purple-700',
+      example: listaAgrupada.filter(item => item.categoria === 'Bolsas')
+    },
+    {
+      name: "Tazas",
+      icon: BsCup,
+      color: 'from-pink-500 to-pink-600',
+      example: listaAgrupada.filter(item => item.categoria === 'Tazas')
+    },
+    {
+      name: "Calendarios",
+      icon: LuCalendarDays,
+      color: 'from-indigo-600 to-indigo-700',
+      example: listaAgrupada.filter(item => item.categoria === 'Calendarios')
+    },
+    {
+      name: "Artículos publicitarios",
+      icon: FaStore,
+      color: 'from-yellow-500 to-yellow-600',
+      example: listaAgrupada.filter(item => item.categoria === 'Articulos_publicitarios')
+    },
+    {
+      name: "Articulos para campañas",
+      icon: MdCampaign,
+      color: 'from-green-600 to-green-700',
+      example: listaAgrupada.filter(item => item.categoria === 'Articulos_para_campañas')
+    }
+  ];
   const location = useLocation();
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -93,55 +137,12 @@ const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map
       color: 'from-blue-500 to-purple-700'
     }
   ];
-  const prendas = [
-    {
-      name: 'Camisetas',
-      icon: FaTshirt,
-      color: 'from-blue-600 to-blue-700',
-      example: listaAgrupada.find(img => img.categoria === 'Playeras')?.url || '',
-    },
-    {
-      name: "Gorras",
-      icon: GiBilledCap,
-      color: 'from-cyan-500 to-cyan-600',
-      example: listaAgrupada.find(img => img.categoria === 'Gorras')?.url || '',
-    },
-    {
-      name: "Bolsas",
-      icon: GiShoppingBag,
-      color: 'from-purple-600 to-purple-700',
-      example: listaAgrupada.find(img => img.categoria === 'Bolsas')?.url || '',
-    },
-    {
-      name: "Tazas",
-      icon: BsCup,
-      color: 'from-pink-500 to-pink-600',
-      example: listaAgrupada.find(img => img.categoria === 'Tazas')?.url || '',
-    },
-    {
-      name: "Calendarios",
-      icon: LuCalendarDays,
-      color: 'from-indigo-600 to-indigo-700',
-      example: listaAgrupada.find(img => img.categoria === 'Calendarios')?.url || '',
-    },
-    {
-      name: "Artículos publicitarios",
-      icon: FaStore,
-      color: 'from-yellow-500 to-yellow-600',
-      example: listaAgrupada.find(img => img.categoria === 'Articulos_publicitarios')?.url || '',
-    },
-    {
-      name: "Articulos para campañas",
-      icon: MdCampaign,
-      color: 'from-green-600 to-green-700',
-      example: listaAgrupada.find(img => img.categoria === 'Articulos_para_campañas')?.url || '',
-    }
-  ];
+
   const phoneNumber = '15548583702'; // Reemplaza con tu número
   const message = encodeURIComponent('Hola, tengo una duda sobre que tecnica puedo usar para mi diseño.'); // Mensaje codificado
   return (
-    <section className="relative z-0 inline-block pt-18 bg-gray-50 w-full h-full"   id='tecnicas' ref={sectionRef}>
-      <BubbleBackground 
+    <section className="relative z-0 inline-block pt-18  w-full h-full" id='tecnicas' ref={sectionRef}>
+      <BubbleBackground
         bubbleCount={30}
         color="rgba(200, 210, 255)"
         minSize={15}
@@ -163,7 +164,7 @@ const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map
             return (
               <div
                 key={index}
-                className="z-0 not-md-card not-md:bg-white card-md rounded-xl shadow-lg  p-6"
+                className="z-0 not-md-card card-md rounded-xl shadow-lg  p-6"
               >
                 <div className={`z-0 w-16 h-16 bg-gradient-to-r ${tecnica.color} rounded-full flex items-center justify-center mb-4`}>
                   <IconComponent className="h-8 w-8 text-white" />
@@ -185,26 +186,25 @@ const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map
               return (
                 <ImageModal
                   key={index}
-                  imageUrl={prenda.example || ''}
-                  title={prenda.name}
-                  technique={'Descripción no disponible'}>
-                <div
-                  key={index}
-                  className=" not-md-card not-md:bg-white card-md rounded-xl shadow-lg  p-6"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${prenda.color} rounded-full flex items-center justify-center mb-4`}>
-                    <IconComponent className="h-8 w-8 text-white" />
+                  images={prenda.example.filter(item => item.url)}
+                  categoria={prenda.example.filter(item => item.categoria)}>
+                  <div
+                    key={index}
+                    className=" not-md-card card-md rounded-xl shadow-lg  p-6"
+                  >
+                    <div className={`w-16 h-16 bg-gradient-to-r ${prenda.color} rounded-full flex items-center justify-center mb-4`}>
+                      <IconComponent className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{prenda.name}</h3>
+                    {/* <p className="text-gray-600 leading-relaxed">{prenda.description}</p> */}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{prenda.name}</h3>
-                  {/* <p className="text-gray-600 leading-relaxed">{prenda.description}</p> */}
-                </div>
                 </ImageModal>
               );
             })}
           </div>
         </div>
 
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
+        <div className="mt-16 bg-white/20 backdrop-blur-xs rounded-2xl shadow-lg p-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">¿No sabes cuál técnica elegir?</h3>
             <p className="text-gray-600 mb-6">

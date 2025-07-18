@@ -154,9 +154,8 @@ const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map
               <div key={item.nombre} className="inline-block w-full">
               <ImageModal
               key={item.nombre}
-                  imageUrl={item.url || ''}
-                  title={item.nombre}
-                  technique={'Descripción no disponible'}
+                  images={item.url}
+                  categoria={item.categoria}
               >
 
               <div key={item.nombre} className="p-2 border-2 border-gray-400 md:hover:border-t-purple-500 md:hover:border-s-blue-700 md:hover:border-b-sky-400 md:hover:border-r-pink-500 hover:p-0 hover:scale-110  aspect-square bg-gradient-to-br rounded-lg flex items-center justify-center hover:from-blue-100 hover:to-cyan-100 transition-colors hover:transition-all duration-300 cursor-pointer">
