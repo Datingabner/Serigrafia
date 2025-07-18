@@ -89,12 +89,12 @@ const Footer: React.FC = () => {
             © 2025 Serigrafía Textil. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
+            <NavLink to={"/legal/politica-privacidad"} className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
               Política de Privacidad
-            </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
+            </NavLink>
+            <NavLink to={"/legal/terminos-servicio"} className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
               Términos de Servicio
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@ import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound';
 import ScrollToTop from "./components/Utils/ScrollToTop";
+import PoliticaPrivacidad from './components/Legal/PoliticaPrivacidad';
+import TerminosServicio from "./components/Legal/TerminosDeServicio";
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path="/trabajos-realizados" element={<Muestras />} />
             <Route path="/como-trabajamos" element={<ComoTrabajamos />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/legal/politica-privacidad" element={<PoliticaPrivacidad />} />
+            <Route path="/legal/terminos-servicio" element={<TerminosServicio />}/>
             <Route path="*" element={<NotFound/>} />
           </Routes>
         </main>

@@ -30,9 +30,9 @@ const Hero: React.FC = () => {
             <NavLink to={"/tecnicas"} className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
               Ver Nuestras Técnicas
             </NavLink>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-200">
-              Solicitar Cotización
-            </button>
+            <NavLink to={"/contacto"} className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-200">
+              Contactanos
+            </NavLink>
           </div>
 
           {/* Features */}

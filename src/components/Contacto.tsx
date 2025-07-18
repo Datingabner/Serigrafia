@@ -23,8 +23,8 @@ const Contacto: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Aquí iría la lógica para enviar el formulario
-    console.log('Formulario enviado:', formData);
-    alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+    alert('¡Gracias por intentar contactarte!, Te llevaremos a nuestro WhatsApp para que puedas detallarnos más sobre tu proyecto.');
+    window.location.href = `https://wa.me/+5215548583702?text=${encodeURIComponent(`Hola, necesito que me pueda ayudar con un proyecto de serigrafía. Aquí están mis datos:\n\nNombre: ${formData.nombre}\nEmail: ${formData.email}\nTeléfono: ${formData.telefono}\nServicio de interés: ${formData.servicio}\nMensaje: ${formData.mensaje}`)}`;
   };
 
   const contactInfo = [
@@ -59,7 +59,7 @@ const Contacto: React.FC = () => {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Contacto</span>

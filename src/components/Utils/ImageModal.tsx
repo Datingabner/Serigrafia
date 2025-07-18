@@ -67,7 +67,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
       {/* Modal superpuesto */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90"
+          className="fixed pt-18 inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
