@@ -83,7 +83,7 @@ const Contacto: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
-                      <a href={item.link} target={item.title==='Dirección'?'_blank':'_self'} className="text-gray-600 whitespace-pre-line">{item.info}</a>
+                      <a href={item.link} target={item.title === 'Dirección' ? '_blank' : '_self'} className="text-gray-600 whitespace-pre-line">{item.info}</a>
                     </div>
                   </div>
                 );
@@ -91,11 +91,8 @@ const Contacto: React.FC = () => {
             </div>
 
             {/* Mapa placeholder */}
-            <div className="mt-8 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg h-64 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-gray-500 mx-auto mb-2" />
-                <p className="text-gray-600">Mapa de ubicación</p>
-              </div>
+            <div className="mt-8 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg h-80 flex items-center justify-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d939.4415032780612!2d-99.29253395865909!3d19.63729878396976!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2194787014b4f%3A0x31365350fda4f514!2sHidalgo%204%2C%20Lomas%20de%20Guadalupe%2C%2054417%20Cdad.%20Nicol%C3%A1s%20Romero%2C%20M%C3%A9x.!5e0!3m2!1ses!2smx!4v1752867029459!5m2!1ses!2smx" width="100%" height="100%" loading="lazy"></iframe>              
             </div>
           </div>
 

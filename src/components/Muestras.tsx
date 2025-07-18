@@ -169,6 +169,8 @@ const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map
           <p className="text-gray-600 mt-6">
             ¿Quieres ver más ejemplos? Contáctanos para ver nuestro portafolio completo
           </p>
+          <br />
+          <a href={"https://wa.me/+5215548583702?text="+encodeURI("Hola, quisiera ver un poco mas de lo que ha hecho.")} target="_blank" rel="noopener noreferrer" className="m-10 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-600 transition-all duration-200">Quiero ver mas</a>
         </div>
 
       </div>

@@ -159,7 +159,7 @@ gsap.registerPlugin(ScrollTrigger);
   };
 
   return (
-    <nav ref={navbarRef} className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav ref={navbarRef} className="bg-white shadow-lg fixed w-full top-0 z-90">
       <div className="max-w-7xl mx-auto px-4 2md:px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-0 h-18">
           {/* Logo */}

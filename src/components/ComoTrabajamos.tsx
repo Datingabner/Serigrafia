@@ -111,9 +111,9 @@ const ComoTrabajamos: React.FC = () => {
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">¿Listo para comenzar tu proyecto?</h3>
           <p className="text-gray-600 mb-6">Contáctanos hoy mismo y recibe una cotización personalizada</p>
-          <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
+          <a href={"https://wa.me/+5215548583702?text="+encodeURI("Hola, me puede hacer una cotizacion de...")} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
             Solicitar Cotización Gratuita
-          </button>
+          </a>
         </div>
       </div>
     </section>
