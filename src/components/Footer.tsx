@@ -81,6 +81,13 @@ const Footer: React.FC = () => {
                 <a href="https://maps.app.goo.gl/ETr5hjp7coWpHhXw5" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors duration-200">Calle Hidalgo 4 Villa Nicolás Romero, Mexico CP 54417 </a>
               </div>
             </div>
+            <br />
+            <div className='space-y-2 items-center-safe'>
+            <h3 className="text-lg font-semibold mb-2">¿Problemas en la pagina?</h3>
+            <NavLink to={"/reportar-problemas"} className="pl-1 hover:text-cyan-400 text-sm transition-colors duration-200">
+              Reportar Problemas
+            </NavLink>
+            </div>
           </div>
         </div>
 
@@ -89,6 +96,7 @@ const Footer: React.FC = () => {
             © 2025 Serigrafía Textil. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
+            
             <NavLink to={"/legal/politica-privacidad"} className="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
               Política de Privacidad
             </NavLink>

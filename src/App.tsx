@@ -11,6 +11,8 @@ import NotFound from './components/NotFound';
 import ScrollToTop from "./components/Utils/ScrollToTop";
 import PoliticaPrivacidad from './components/Legal/PoliticaPrivacidad';
 import TerminosServicio from "./components/Legal/TerminosDeServicio";
+import ReporteProblemas from "./components/ReporteProblemas";
+import AdminApp from "./components/Admin/AdminApp";
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/legal/politica-privacidad" element={<PoliticaPrivacidad />} />
             <Route path="/legal/terminos-servicio" element={<TerminosServicio />}/>
+            <Route path="/reportar-problemas" element={<ReporteProblemas />} />
+            <Route path="/admin/*" element={<AdminApp />} />
             <Route path="*" element={<NotFound/>} />
           </Routes>
         </main>
