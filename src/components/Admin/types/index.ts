@@ -21,7 +21,7 @@ export interface PreviewData extends UploadFormData {
 }
 
 export type Categoria = 
-  | 'Camisetas'
+  | 'Playeras'
   | 'Gorras'
   | 'Bolsas'
   | 'Tazas'
@@ -30,7 +30,7 @@ export type Categoria =
   | 'Artículos para campañas';
 
 export const CATEGORIAS: Categoria[] = [
-  'Camisetas',
+  'Playeras',
   'Gorras',
   'Bolsas',
   'Tazas',
@@ -40,11 +40,11 @@ export const CATEGORIAS: Categoria[] = [
 ];
 
 export const CATEGORIA_PATHS: Record<Categoria, string> = {
-  'Camisetas': 'src/assets/serigrafia-resource/Playeras',
-  'Gorras': 'src/assets/serigrafia-resource/Gorras',
-  'Bolsas': 'src/assets/serigrafia-resource/Bolsas',
-  'Tazas': 'src/assets/serigrafia-resource/Tazas',
-  'Calendarios': 'src/assets/serigrafia-resource/Calendarios',
-  'Artículos publicitarios': 'src/assets/serigrafia-resource/Artículos_publicitarios',
-  'Artículos para campañas': 'src/assets/serigrafia-resource/Articulos_para_campañas'
+  'Playeras': './../serigrafia-resource/Playeras',
+  'Gorras': './../serigrafia-resource/Gorras',
+  'Bolsas': './../serigrafia-resource/Bolsas',
+  'Tazas': './../serigrafia-resource/Tazas',
+  'Calendarios': './../serigrafia-resource/Calendarios',
+  'Artículos publicitarios': './../serigrafia-resource/Artículos_publicitarios',
+  'Artículos para campañas': './../serigrafia-resource/Articulos_para_campañas'
 };

@@ -17,12 +17,12 @@ import AdminApp from "./components/Admin/AdminApp";
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop/>
+    <Router basename="/serigrafia">
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navbar />
-        <main>
-          <Routes>
+        
+          <Routes >
             <Route path="/" element={<Hero />} />
             <Route path="/inicio" element={<Hero />} />
             <Route path="/tecnicas" element={<Tecnicas />} />
@@ -30,12 +30,11 @@ function App() {
             <Route path="/como-trabajamos" element={<ComoTrabajamos />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/legal/politica-privacidad" element={<PoliticaPrivacidad />} />
-            <Route path="/legal/terminos-servicio" element={<TerminosServicio />}/>
+            <Route path="/legal/terminos-servicio" element={<TerminosServicio />} />
             <Route path="/reportar-problemas" element={<ReporteProblemas />} />
             <Route path="/admin/*" element={<AdminApp />} />
-            <Route path="*" element={<NotFound/>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-        </main>
         <Footer />
       </div>
     </Router>

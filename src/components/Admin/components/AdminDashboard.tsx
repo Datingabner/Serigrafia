@@ -83,11 +83,11 @@ const AdminDashboard: React.FC = () => {
     if (!previewData) return;
 
     setIsUploading(true);
-    
+
     try {
       // Simular proceso de subida
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
+
       // Aquí iría la lógica real de subida del archivo
       console.log('Uploading file:', {
         file: previewData.file,
@@ -95,20 +95,44 @@ const AdminDashboard: React.FC = () => {
         destination: previewData.destinationPath,
         categoria: previewData.categoria
       });
+      const handleUpload = async () => {
+        const formData = new FormData();
+        if (previewData.file) {
+          formData.append('image', previewData.file);
+          formData.append('finalFileName', previewData.finalFileName);
+          formData.append('destinationPath', previewData.destinationPath);
+          // src/assets/serigrafia-resource/Playeras
+          formData.append('categoria', previewData.categoria);
+        } else {
+          throw new Error("No se seleccionó ningún archivo para subir.");
+        }
+
+        try {
+          const res = await fetch('api/Upload.php', {
+            method: 'POST',
+            body: formData
+          });
+          const data = await res.json();
+          console.log('URL de la imagen:', data.url);
+        } catch (err) {
+          alert("Error al subir la imagen: " + (err instanceof Error ? err.message : String(err)));
+        }
+      };
+      handleUpload();
 
       setUploadSuccess(true);
       setShowPreview(false);
-      
+
       // Resetear formulario
       setFormData({
         file: null,
         nombrePrenda: '',
         categoria: ''
       });
-      
+
       // Ocultar mensaje de éxito después de 3 segundos
       setTimeout(() => setUploadSuccess(false), 3000);
-      
+
     } catch (error) {
       console.error('Error uploading file:', error);
       // Aquí podrías mostrar un mensaje de error
@@ -137,7 +161,7 @@ const AdminDashboard: React.FC = () => {
                 <p className="text-sm text-gray-500">Gestión de Productos - Serigrafía Textil</p>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <div className="text-right">
                 <p className="text-sm font-medium text-gray-900">{user?.username}</p>
@@ -199,8 +223,8 @@ const AdminDashboard: React.FC = () => {
         onCancel={handleCancelPreview}
         isUploading={isUploading}
       />
-    {/* Galería Section */}
-    <Galeria/>
+      {/* Galería Section */}
+      <Galeria />
     </div>
 
   );

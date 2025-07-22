@@ -1,28 +1,33 @@
 import React from 'react';
 import {  Baby, Venus, Mars } from 'lucide-react';
 import ImageModal from './Utils/ImageModal';
-const imagenesPorCategoria = import.meta.glob("../assets/serigrafia-resource/*/*.jpg",{ eager: true, query: '?url', import: 'default' });
+import { useEffect, useState } from 'react';
 
 const Muestras: React.FC = () => {
- type ImagenAgrupada = {
-  categoria: string;
-  nombre: string;
-  url: string;
-};
-
-const listaAgrupada: ImagenAgrupada[] = Object.entries(imagenesPorCategoria).map(
-  ([path, url]) => {
-    const partes = path.split("/");
-    const categoria = partes[partes.length - 2]; // Ej: Playeras, Gorras
-    const nombreArchivo = partes[partes.length - 1].replace(".jpg", "");
-
-    return {
-      categoria,
-      nombre: nombreArchivo,
-      url: url as string,
-    };
-  }
-);
+  type Imagen = {
+         file: string;
+         nombrePrenda: string;
+         categoria: string;
+     };
+ 
+     const [imagenes, setImagenes] = useState<Imagen[]>([]);
+ 
+     useEffect(() => {
+         fetch('api/ObtenerImagenes.php')
+             .then(res => res.json())
+             .then(data => {
+                 console.log('Imágenes obtenidas:', data);
+                 setImagenes(data);
+             })
+             .catch(error => {
+                 console.error('Error al cargar las imágenes:', error);
+             });
+     }, []);
+     const listaAgrupada: { categoria: string; nombre: string; url: string }[] = imagenes.map(({ file, nombrePrenda, categoria }) => ({
+   categoria,
+   nombre: nombrePrenda,
+   url: file,
+ }));
 
   const categorias = [
     {
