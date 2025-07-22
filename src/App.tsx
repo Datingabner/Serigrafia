@@ -17,7 +17,7 @@ import AdminApp from "./components/Admin/AdminApp";
 
 function App() {
   return (
-    <Router basename="/serigrafia">
+    <Router>
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navbar />
