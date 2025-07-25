@@ -3,13 +3,12 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: DELETE');
 
 $imageUrl = $_GET['url'] ?? '';
-$basePath = realpath(__DIR__ . './../serigrafia-resource');
-$filePath = realpath($basePath . '/' . basename($imageUrl));
+$filePath = realpath($imageUrl);
 
 // Validaciones de seguridad
-if (!$imageUrl || !$filePath || strpos($filePath, $basePath) !== 0) {
+if (!$imageUrl || !$filePath) {
     http_response_code(400);
-    echo json_encode(['error' => 'Ruta de imagen no válida'.$filePath]);
+    echo json_encode(['error' => 'Ruta deimagen no válida'.$filePath]);
     exit;
 }
 

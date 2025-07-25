@@ -45,6 +45,6 @@ export const CATEGORIA_PATHS: Record<Categoria, string> = {
   'Bolsas': './../serigrafia-resource/Bolsas',
   'Tazas': './../serigrafia-resource/Tazas',
   'Calendarios': './../serigrafia-resource/Calendarios',
-  'Artículos publicitarios': './../serigrafia-resource/Artículos_publicitarios',
-  'Artículos para campañas': './../serigrafia-resource/Articulos_para_campañas'
+  'Artículos publicitarios': './../serigrafia-resource/Articulos_publicitarios',
+  'Artículos para campañas': './../serigrafia-resource/Articulos_para_campanias'
 };

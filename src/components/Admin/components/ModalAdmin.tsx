@@ -38,7 +38,7 @@ const ImageModalAdmin: React.FC<ImageModalAdminProps> = ({
       if (result.success) {
         setStatusMessage({ text: 'Imagen eliminada correctamente', type: 'success' });
         // Close modal after successful deletion
-        setTimeout(() => closeModal(), 1500);
+        setTimeout(() => closeModal(), 3000);
       } else {
         setStatusMessage({ text: result.message || 'Error al eliminar la imagen', type: 'error' });
       }

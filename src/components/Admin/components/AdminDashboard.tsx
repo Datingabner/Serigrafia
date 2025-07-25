@@ -20,6 +20,7 @@ const AdminDashboard: React.FC = () => {
   const [previewData, setPreviewData] = useState<PreviewData | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [refreshGallery, setRefreshGallery] = useState(false);
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -119,7 +120,7 @@ const AdminDashboard: React.FC = () => {
         }
       };
       handleUpload();
-
+      setRefreshGallery(prev => !prev);
       setUploadSuccess(true);
       setShowPreview(false);
 
@@ -147,7 +148,7 @@ const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-18">
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,7 +159,7 @@ const AdminDashboard: React.FC = () => {
               </div>
               <div>
                 <h1 className="text-xl font-semibold text-gray-900">Panel de Administración</h1>
-                <p className="text-sm text-gray-500">Gestión de Productos - Serigrafía Textil</p>
+                <p className="text-sm text-gray-500">Gestión de Imagenes - Serigrafía Textil</p>
               </div>
             </div>
 
@@ -190,6 +191,7 @@ const AdminDashboard: React.FC = () => {
               <p className="text-sm text-green-700">El archivo se ha guardado en la ubicación especificada.</p>
             </div>
           </div>
+          
         )}
 
         <div className="space-y-8">
@@ -224,7 +226,10 @@ const AdminDashboard: React.FC = () => {
         isUploading={isUploading}
       />
       {/* Galería Section */}
-      <Galeria />
+      <Galeria 
+      refreshTrigger={refreshGallery} 
+      onImageDeleted={() => setRefreshGallery(prev => !prev)}
+      />
     </div>
 
   );
